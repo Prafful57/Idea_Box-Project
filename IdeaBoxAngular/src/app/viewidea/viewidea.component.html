@@ -1,0 +1,95 @@
+<div class="viewIdea">
+    <div class="viewTable">
+    <form [formGroup]="uform"type="submit" (ngSubmit)="onsubmit(uform.value)" class="viewForm">
+        
+    <table  class="table-striped" *ngFor="let i of idea"><br>
+        <tr>
+            <td><label class="label-title"> &nbsp; &nbsp; &nbsp; &nbsp; Idea Id</label></td>
+            <td><input 
+                formControlName="ideaId"
+                name="ideaId"
+                id="ideaId" 
+                type="number" 
+                [(ngModel)]="i.ideaId"
+                class="form-control"></td>
+        </tr>
+
+        <tr>
+            <td><label class="label-title">&nbsp; &nbsp; &nbsp; &nbsp;Idea Title</label></td>
+            <td><input 
+                formControlName="ideaTitle"
+                name="ideaTitle"
+                id="ideaTitle" 
+                type="text" 
+                [(ngModel)]="i.ideaTitle"
+                class="form-control"></td>
+        </tr>
+
+        <tr>
+            <td><label class="label-title">&nbsp; &nbsp; &nbsp; &nbsp;Idea Description </label>&nbsp;</td>
+            <td class="description"><input 
+                formControlName="ideaDescription"
+                name="ideaDescription"
+                id="ideaDescription" 
+                type="text" 
+                [(ngModel)]="i.ideaDescription"
+                class="form-control"></td>
+        </tr>
+
+        <tr>
+            <td><label class="label-title">&nbsp; &nbsp; &nbsp; &nbsp;Tags</label></td>
+            <td><input 
+                formControlName="tags"
+                name="tags"
+                id="tags" 
+                type="text" 
+                [(ngModel)]="i.tags"
+                class="form-control"></td>
+        </tr>
+
+        <tr>
+            <td><label class="label-title">&nbsp; &nbsp; &nbsp; &nbsp;Submitted on</label></td>
+            <td><input 
+                formControlName="submittedDate"
+                name="submittedDate"
+                id="submittedDate" 
+                type="text" 
+                [(ngModel)]="i.submittedDate"
+                class="form-control"></td>
+        </tr>
+
+        <tr>
+            <td><label class="label-title">&nbsp; &nbsp; &nbsp; &nbsp;Emp Id</label></td>
+            <td><input 
+                formControlName="empId"
+                name="empId"
+                id="empId" 
+                type="number" 
+                [(ngModel)]="i.empId"
+                class="form-control"></td>
+        </tr>
+
+        <tr>
+            <td><label class="label-title">&nbsp; &nbsp; &nbsp; &nbsp;Likes</label></td>
+            <td><input 
+                formControlName="likes"
+                name="likes"
+                id="likes" 
+                type="number" 
+                [(ngModel)]="i.likes"
+                class="form-control"></td>
+        </tr>
+        
+        <tr>
+            <td class="label-title">&nbsp; &nbsp; &nbsp; &nbsp;Status</td>
+            <td><input type="text" name="ideaStatus" id="ideaStatus" [(ngModel)]="i.ideaStatus" formControlName="ideaStatus" class="form-control"></td>
+        </tr>
+
+        <tr>
+            <td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<button type="submit" value="submit" class="btn btn-success">Approve</button></td> 
+            <td><button type="button" (click)="deleteIdea(i.ideaId)" class="btn btn-danger">Reject</button></td>
+        </tr>
+    </table>
+    </form> 
+    </div>
+</div>

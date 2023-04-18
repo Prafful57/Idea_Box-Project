@@ -1,0 +1,52 @@
+body{
+    background: linear-gradient(120deg, #22B9A9 , #0E897C);
+    margin: 0%;
+    padding:0%;
+    font-family: montserrat;
+    height: 5000vh;   
+}
+.viewTable{
+
+    width: 50%;
+    height: 45%;
+    margin-top: 10%;
+    margin-left: 300px;
+    background: white;
+    border-radius: 15px;
+} 
+.viewTable2{
+  width: 50%;
+  height: 45%;
+  margin-top: 10%;
+  margin-left: 300px;
+  background: white;
+  border-radius: 15px;
+}
+
+button{
+   /* position: absolute;
+    border-radius: 8px;
+    background-color: #78d58c;
+    color: aliceblue;
+    font-size: 18px; */
+  
+    border-radius: 12px;
+    background-color:  #0E897C;
+    border-color: aliceblue;
+    font-size: 18px;
+  
+    
+  
+  }
+
+
+
+.myPostButton{
+  margin-left: 25%;
+  width: 50%;
+    height: 7%;
+    margin-top: 1%;
+    border-radius: 15px;
+    text-align: center;
+  } 
+ 

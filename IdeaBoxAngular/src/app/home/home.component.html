@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+		<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+		<script src="https://kit.fontawesome.com/f6dcf461c1.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        <title>idea</title>
+    </head>
+    <body>
+       
+        <section class="header">
+            <nav>
+                
+                <a href="index.html"><img src="" alt=""></a>
+				
+                
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+</section>
+        
+		 <section class="course" id="ideas">
+            <div class="nav-links" id="navLinks">
+                <ul>
+                    <li><a [routerLink]="['/welcome']">HOME</a></li>
+                    <li><a (click)="postIdea()" >CREATE IDEA</a></li>
+                    <li><a (click)="myPost()">MY POST</a></li>
+                    <!-- <li><a href="#ideas">VIEW IDEA</a></li> -->
+                    <li><a [routerLink]="['/login']">LOGOUT</a></li>
+                </ul>
+            </div>
+        <h1>List Of Ideas</h1>
+        <div class="font">
+            <p style="color:rgb(255, 255, 255);font-size: 20px" >Our Sonatians have shared new ideas through this Idea Box.<br> The ideas which are approved can be seen here.</p><br>
+        </div>
+        
+        <button style="margin-left: 1000px; margin-bottom:0px;" class="hero-btn" (click)="sortData()">Sort Based on Likes</button><br>
+      <div class="search">
+        <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+      </div>
+
+        <div class="row">
+                <div *ngFor="let idea of ideas">
+                <div class="course-col"><br>
+                <div style = "width:50%" class="col-md-6" *ngIf="searchText ==='' || idea.tags.toLowerCase().includes(searchText)">
+                 <h3>{{idea.ideaTitle}}</h3>   
+                <h4>{{idea.tags}}</h4><br>
+                <p [ngClass]="{'limitTextHeight': isReadLess}" class="description">{{idea.ideaDescription}}</p><br>
+                <button type="button" (click)="isReadLess=!isReadLess">
+                    {{ isReadLess ? 'Read Less': 'Read More' }}
+                </button>
+				<p>EmpId :&nbsp;{{idea.empId}}</p>
+                <p>IdeaId :&nbsp;{{idea.ideaId}}</p><br>
+                <button (click)="createSuggestion(idea.ideaId)" class="hero-btn">Suggestion</button>
+                <button (click)="createFeedback(idea.ideaId)" class="hero-btn">Feedback</button>
+                <button class="like_btn" (click)="onLikeClick(idea.ideaId)" >
+                    <span id="icon"><i class="far fa-thumbs-up"></i><span>  {{idea.likes}}</span> Likes</span>
+                    <span id="count"></span>
+                </button>
+            </div>
+            </div>
+        </div>
+        </div>
+        </section>
+        <section class="testimonials">
+            <h1>What our colleagues say</h1>
+ <!-- <p style="color:rgb(255, 255, 255);font-size: 12px">One of the best platform to share the ideas.</p> -->
+            <div class="row">
+                <div class="testimonials-col">
+                    <img src="" alt="">
+                    <div>
+                        <p>One of the best platform to share the ideas.<br>
+                        Thank you for all.</p>
+                        <h3>Shubhakar</h3>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+
+                    </div>
+                </div>
+                <div class="testimonials-col">
+                    <img src="" alt="">
+                    <div>
+                        <p>One of the best platform to share the ideas<br>
+                        Thank you for all.</p>
+                        <h3>Prafful</h3>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                </div>
+                </div>
+        </section>
+        <section class="footer">
+            <h4>About Us</h4>
+            <p style="color:rgb(255, 255, 255);font-size: 18px"
+            >We are supporting the ideas of Sonatians and <br>allow them to excel and brighten their future careers.</p>
+        </section>
+        <script>
+            function onLikeClick(){
+            let clicked = false;
+            const likeBtn = document.querySelector(".like_btn");
+            let likeIcon = document.getElementById("#icon");
+            let count = document.getElementById("#count");
+            likeBtn.addEventListener("click", ()=>{
+                if(!clicked){
+                    clicked=true;
+                    likeIcon.innerHTML = `<i class="fas fa-thumbs-up"></i>`
+                    count.textContent++;
+                }
+                else{
+                    clicked=false;
+                    likeIcon.innerHTML = `<i class="fas fa-thumbs-up"></i>`
+                }
+            })
+        }
+        </script>
+
+    </body>
+</html>

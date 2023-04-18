@@ -1,0 +1,30 @@
+.search-container{
+    width: 100%;
+    max-width: 500px;
+    background: rgba(225, 222, 222, 0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 5px 50px;
+    }
+    .search-container input{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 12px 10px;
+    font-size: 20px;
+    color: #cac7ff;
+    }
+    ::placeholder{
+    color: #cac7ff;
+    }
+    .search-container button img{
+    width: 55px;}
+    .search-bar button{
+    border: 0;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: #58629b;
+    cursor: pointer;}

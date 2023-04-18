@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body >
+    <form (ngSubmit)="getIdea()">
+        <div class="dypost"><br>
+            <!-- <label style="color: aliceblue;">Emp Id:&nbsp;</label> -->
+            <!-- <input type="text" id="empId" required [(ngModel)]="empId" name="empId"/><br><br> -->
+            <!-- <label style="color: aliceblue;">Click to get Title and Description : &nbsp;</label> -->
+            <button class="myPostButton" type="submit" >Know Your Ideas</button>
+        </div>
+       <div id="grid">
+        <div  class="flex" *ngFor="let i of Idea" >
+            <ul class="viewTable">
+                <li> Idea-Id:{{i.ideaId}}<br>
+                    Idea Title: {{i.ideaTitle}} <br>
+                    Idea Description: {{i.ideaDescription}}<br>
+                    Likes:{{i.likes}} 
+                 </li> <br>
+                 <button class= "flex-child" (click)="getFeedback(i.ideaId)" type="submit"><a href=""></a>Feedback</button>
+                 &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+                 <button class= "flex-child" (click)="getSuggestion(i.ideaId)" type="submit"><a href=""></a>Suggestion</button> 
+                </ul>     
+        </div>
+    
+        <div  class="viewTable2">
+           <ul *ngFor="let f of feedback">
+            <li>&nbsp; {{f.feedBack}}</li>
+            </ul>
+        </div>
+        <div class="viewTable2">
+            <ul *ngFor="let s of suggestion">
+             <li>&nbsp; {{s.suggestion}}</li>
+             </ul>
+         </div> 
+       </div>
+        
+        
+    </form> 
+    
+
+<!-- 
+    <div> <button  (click)="getFeedback(154)">Feedback</button></div>
+    <div>
+        <ul *ngFor="let f of feedback" class="viewTable">
+           <br> <li>{{f.feedBack}}
+                  
+
+           </li>
+              </ul> 
+              <!--  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button>Suggestion</button> -->
+        <!-- </div> --> 
+
+  
+  
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+ 
+<!-- 
+    <form (ngSubmit)="onClick()">
+
+        Idea Id:<input type="text" id="ideaId1" required [(ngModel)]="ideaId1" name="ideaId1"/><br>
+
+        <ul *ngFor="let s of suggestion">
+
+       
+
+        </ul> Click to get Suggestion
+
+        <button type="submit">Click</button>
+
+    </form>   -->
+
+
+
+
+<!-- 
+</div> -->
+
+
+<!-- <form (ngSubmit)="getFeedback()">
+
+    Idea Id:<input type="text" id="ideaId" required [(ngModel)]="ideaId" name="ideaId"/><br>
+
+    <ul *ngFor="let f of feedback">
+        <li>{{f.feedBack}}</li>
+    </ul>Click to get Feedback
+    <button type="submit">Click</button>
+
+</form> -->

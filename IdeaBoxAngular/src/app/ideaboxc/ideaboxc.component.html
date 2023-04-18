@@ -1,0 +1,40 @@
+<div>
+    <form (ngSubmit)="onClick()">
+        Emp Id:<input type="text" id="empId" required [(ngModel)]="empId" name="empId"/><br>  
+    <ul *ngFor="let i of Idea">
+        Idea Title: {{i.ideaTitle}} <br>
+          Idea Description: {{i.ideaDescription}} 
+         
+   </ul>Click to get Title and Description
+   <button type="submit">Click</button>
+
+
+   </form>
+    <form (ngSubmit)="onClick()">
+        Idea Id:<input type="text" id="ideaId" required [(ngModel)]="ideaId" name="ideaId"/><br>
+        <ul *ngFor="let f of feedback">
+            <li>{{f.feedBack}}</li>
+            
+        </ul>Click to get Feedback
+         
+        <button type="submit">Click</button>
+    </form>
+
+
+    <form (ngSubmit)="onClick()">
+        Idea Id:<input type="text" id="ideaId1" required [(ngModel)]="ideaId1" name="ideaId1"/><br>
+        <ul *ngFor="let s of suggestion">
+            <li>{{s.suggestion}}</li>
+        </ul> Click to get Suggestion
+        <button type="submit">Click</button>
+    </form>
+
+
+    <form (click)=" onClick()">
+       Idea id:<input type="text" id="ideaId2" required [(ngModel)]="ideaId2" name="ideaId2"/><br>
+        <ul   >
+            <li>{{likes | json}}</li>
+        </ul> Click to get Likes
+        <button type="submit">Click</button>
+    </form>
+</div>

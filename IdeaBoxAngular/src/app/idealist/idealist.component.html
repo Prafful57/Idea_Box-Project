@@ -1,0 +1,57 @@
+<div class="view">
+
+        <div class="form-group" class="container mt-5" id="search">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search..."
+            [(ngModel)]="filterTerm"
+          />
+  
+        </div><br>
+    
+    <div>
+        <table class="table-active" ><br>
+            <tr>
+                <!-- <td>
+                    <label>Idea Number</label>
+                </td> -->
+                <td>
+                    <label>Idea Title</label>
+                </td>
+                <!-- <td>
+                    <label>Idea Description</label>
+                </td> -->
+                <td>
+                    <label>Tags</label>
+                </td>
+                <td>
+                    <label>Submitted Date</label>
+                </td>
+                <td>
+                    <label>Emp Id</label>
+                </td>
+                <!-- <td>
+                    <label>Likes</label>
+                </td>
+                <td>
+                    <label>Status</label>
+                </td> --> 
+            </tr>
+            <tr *ngFor="let i of ideaList | filter: filterTerm">
+                <!-- <td>{{i.ideaId}}</td> -->
+                <td>{{i.ideaTitle}}</td>
+                <!-- <td>{{i.ideaDescription}}</td> -->
+                <td>{{i.tags}}</td>
+                <td>{{i.submittedDate}}</td>
+                <td>{{i.empId}}</td><br><br>
+                <!-- <td>{{i.likes}}</td>
+                <td>{{i.ideaStatus}}</td> --> 
+                <!-- //href-link to view the entry by click of view button we can see the entry// # -is for opening this link(we are going to different page)//[roter-link]-link to other page //[router-link] by this we are redirecting to viewIdeaComponent -->
+                <td><a href="#" [routerLink]="['/idea/',i.ideaId, 'view']" class="btn btn-success">View</a></td>
+    
+            </tr><br>
+        </table>
+    </div>
+    
+</div>

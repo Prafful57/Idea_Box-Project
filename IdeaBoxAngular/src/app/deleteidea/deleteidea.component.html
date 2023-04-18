@@ -1,0 +1,14 @@
+<div>
+<form (ngSubmit) = "onSubmit()">
+    <table  cellpadding = "10">
+        <tr>
+            <td>enter your ideaId </td>
+            <td><input type="text" id="ideaId" required name="ideaId" [(ngModel)]="idea.ideaId"/></td>
+        </tr>
+
+        <tr>
+            <button type="submit" value="submit">Delete</button>
+        </tr>
+    </table>
+</form>
+</div>

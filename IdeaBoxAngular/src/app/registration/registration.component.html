@@ -1,0 +1,235 @@
+<div class ="uni_div">
+  <section class="vh-120 uni_div">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 20px;">
+            <div class="card-body p-8 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+  <form [formGroup]="emp">
+   
+    <div >
+      <label for="name">Enter Emp Name</label>
+    <input
+        [class.is-invalid]="
+          emp.get('name')!.invalid &&
+          emp.get('name')!.touched
+        "
+        type="text"
+        id="name"
+        class="form-control"
+        placeholder="Emp Name"
+        formControlName="name"
+        required [(ngModel)]="user.name"
+      />
+      <small
+      *ngIf="emp.get('name')?.hasError('pattern')"
+      class="text-danger"
+    >
+    </small>
+  <small
+    class="text-danger"
+    *ngIf="
+      emp.get('name')?.errors?.required &&
+      emp.get('name')!.touched
+    "
+    >This field is required</small
+  >
+    </div>
+  <br>
+  
+    <div class="form-group">
+      <label for="empId">Enter Emp Id</label>
+    <input
+        [class.is-invalid]="
+          emp.get('empId')!.invalid &&
+          emp.get('empId')!.touched
+        "
+        type="number"
+        id="empId"
+        class="form-control"
+        placeholder="Emp Emp No"
+        formControlName="empId"
+        required [(ngModel)]="user.empId"
+      />
+      <div *ngIf="f.empId.errors?.pattern" class="text-danger">Please, Enter Emp No between 4-6 digits</div>
+  <small
+    class="text-danger"
+    *ngIf="
+      emp.get('empId')?.errors?.required &&
+      emp.get('empId')!.touched
+    "
+    >This field is required</small
+  >
+    </div>
+    
+    <br>
+   
+   
+    <div class="form-group">
+      <label for="emailId">Enter Email Id</label>
+      <input
+        [class.is-invalid]="
+          emp.get('emailId')!.invalid &&
+          emp.get('emailId')!.touched
+        "
+        type="email"
+        id="emailId"
+        class="form-control"
+        placeholder="Email Id"
+        formControlName="emailId"
+        required [(ngModel)]="user.emailId"
+      />
+  
+      <div
+        *ngIf="
+          emp.get('emailId')?.invalid &&
+          emp.get('emailId')?.touched
+        "
+      >
+      
+  <small
+    class="text-danger"
+    *ngIf="
+      emp.get('emailId')?.errors?.required &&
+      emp.get('emailId')!.touched
+    "
+    >This field is required</small
+  >
+  <small
+      *ngIf="emp.get('emailId')?.errors?.email"
+      class="text-danger"
+    >
+   Error in Email Type
+    </small>
+      </div>
+    </div>
+  
+    <br />
+    <div class="form-group">
+      <label for="dept">Enter Dept</label>
+    <input
+        [class.is-invalid]="
+          emp.get('dept')!.invalid &&
+          emp.get('dept')!.touched
+        "
+        type="text"
+        id="dept"
+        class="form-control"
+        placeholder="Emp Dept"
+        formControlName="dept"
+        required [(ngModel)]="user.dept"
+      />
+      <small
+      *ngIf="emp.get('dept')?.hasError('pattern')"
+      class="text-danger"
+    >
+    </small>
+  <small
+    class="text-danger"
+    *ngIf="
+      emp.get('dept')?.errors?.required &&
+      emp.get('dept')!.touched
+    "
+    >This field is required</small
+  >
+    </div>
+  
+    <br />
+    <div class="form-group">
+      <label for="role">Enter Role</label>
+    <input
+        [class.is-invalid]="
+          emp.get('role')!.invalid &&
+          emp.get('role')!.touched
+        "
+        type="text"
+        id="role"
+        class="form-control"
+        placeholder="Emp Role"
+        formControlName="role"
+        required [(ngModel)]="user.role"
+      />
+      <small
+      *ngIf="emp.get('role')?.hasError('pattern')"
+      class="text-danger"
+    >
+    </small>
+  <small
+    class="text-danger"
+    *ngIf="
+      emp.get('role')?.errors?.required &&
+      emp.get('role')!.touched
+    "
+    >This field is required</small
+  >
+    </div>
+    <br />
+  
+    <div class="form-group">
+      <label for="phone">Enter Phone No</label>
+    <input
+        [class.is-invalid]="
+          emp.get('phone')!.invalid &&
+          emp.get('phone')!.touched"
+        type="number"
+        id="phone"
+        class="form-control"
+        placeholder="Emp Phone No"
+        formControlName="phone"
+        required [(ngModel)]="user.phone"
+      />
+      <div *ngIf="f.phone.errors?.pattern" class="text-danger">Please, Enter 10 digit Mobile Number.</div>
+  <small
+    class="text-danger"
+    *ngIf="
+      emp.get('phone')?.errors?.required &&
+      emp.get('phone')!.touched"
+    >This field is required</small>
+    </div>
+  
+    <br />
+  
+    <div class="form-group">
+      <label for="password">Enter Password</label>
+    <input
+        [class.is-invalid]="
+          emp.get('password')!.invalid &&
+          emp.get('password')!.touched"
+        type="text"
+        id="password"
+        class="form-control"
+        placeholder="Enter Password"
+        formControlName="password"
+        required [(ngModel)]="user.password"
+      />
+      <div *ngIf="f.password.errors?.pattern" class="text-danger">Please Select Strong Password.</div>
+  <small
+    class="text-danger"
+    *ngIf="
+      emp.get('password')?.errors?.required &&
+      emp.get('password')!.touched"
+    >This field is required</small>
+    </div>
+    
+   
+     <div>
+      <br>
+      <button type="submit" class="btn btn-primary" [disabled]="!emp.valid" [class.btn-danger]="!emp.valid" (click)="registerUser()">Register</button>
+    </div> 
+   <br>
+    <!-- <button class="btn btn-primary" [disabled]="!emp.valid" [class.btn-danger]="!emp.valid" (click)="registerUser()">Register</button>  -->
+    <div class="container signin">
+      <br>
+      <p class="signup_link">Already have an account? <a (click)="GoToLoginPage()">Sign in</a>.</p>
+    </div>
+  </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</section>
+
+
